@@ -8,7 +8,7 @@ export default function(initialStore) {
     initialStore.use({
         store: Store => {
             Store.prototype.addSkills = function(skills) {
-                const currentSkills = this.getData('skills') || [];
+                const currentSkills = this.get('skills') || [];
                 if (!isArray(skills) && !isString(skills)) {
                     throw new Error(`${ERROR_EXPECT_ARRAY_OF_SKILL_NAMES} Got ${typeof skills}.`);
                 }
@@ -19,7 +19,7 @@ export default function(initialStore) {
             };
 
             Store.prototype.removeSkills = function(skills) {
-                const currentSkills = this.getData('skills') || [];
+                const currentSkills = this.get('skills') || [];
                 if (!isArray(skills) && !isString(skills)) {
                     throw new Error(`${ERROR_EXPECT_ARRAY_OF_SKILL_NAMES} Got ${typeof skills}.`);
                 }

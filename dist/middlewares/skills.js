@@ -10,7 +10,7 @@ exports.default = function (initialStore) {
     initialStore.use({
         store: function store(Store) {
             Store.prototype.addSkills = function (skills) {
-                var currentSkills = this.getData('skills') || [];
+                var currentSkills = this.get('skills') || [];
                 if (!(0, _isArray2.default)(skills) && !(0, _isString2.default)(skills)) {
                     throw new Error(ERROR_EXPECT_ARRAY_OF_SKILL_NAMES + ' Got ' + (typeof skills === 'undefined' ? 'undefined' : _typeof(skills)) + '.');
                 }
@@ -23,7 +23,7 @@ exports.default = function (initialStore) {
             };
 
             Store.prototype.removeSkills = function (skills) {
-                var currentSkills = this.getData('skills') || [];
+                var currentSkills = this.get('skills') || [];
                 if (!(0, _isArray2.default)(skills) && !(0, _isString2.default)(skills)) {
                     throw new Error(ERROR_EXPECT_ARRAY_OF_SKILL_NAMES + ' Got ' + (typeof skills === 'undefined' ? 'undefined' : _typeof(skills)) + '.');
                 }
